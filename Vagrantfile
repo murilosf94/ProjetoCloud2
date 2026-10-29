@@ -42,7 +42,8 @@ Vagrant.configure("2") do |config|
       mysql -e "CREATE USER IF NOT EXISTS 'api_user'@'localhost' IDENTIFIED BY 'senha_super_segura';"
       mysql -e "GRANT ALL PRIVILEGES ON gerenciador_processos.* TO 'api_user'@'localhost';"
       mysql -e "FLUSH PRIVILEGES;"
-
+      
+      mkdir -p /home/vagrant/app/logs
       chmod +x /home/vagrant/app/motor.sh #para garantir que o script seja executável
       
       echo "Ambiente montado!"
